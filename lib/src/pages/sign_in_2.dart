@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignIn2 extends StatelessWidget {
-  const SignIn2({Key? key}) : super(key: key);
+class SignInTwo extends StatelessWidget {
+  const SignInTwo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final size=MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xFF21899C),
@@ -31,12 +31,12 @@ class SignIn2 extends StatelessWidget {
     );
   }
 
-
-  Widget buildCard(Size size){
+  Widget buildCard(Size size) {
     return Container(
       alignment: Alignment.center,
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40)),
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40), topRight: Radius.circular(40)),
         color: Colors.white,
       ),
       child: Padding(
@@ -44,7 +44,6 @@ class SignIn2 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
             //header text
             Text(
               'Login Account',
@@ -54,7 +53,9 @@ class SignIn2 extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: size.height*0.01,),
+            SizedBox(
+              height: size.height * 0.01,
+            ),
             Text(
               'Discover your social & Try to Login',
               style: GoogleFonts.inter(
@@ -63,34 +64,45 @@ class SignIn2 extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: size.height*0.04,),
+            SizedBox(
+              height: size.height * 0.04,
+            ),
 
             //logo section
-            logo(size.height/8, size.height/8),
-            SizedBox(height: size.height*0.03,),
+            logo(size.height / 8, size.height / 8),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
             richText(24),
-            SizedBox(height: size.height*0.05,),
+            SizedBox(
+              height: size.height * 0.05,
+            ),
 
             //email & password section
             emailTextField(size),
-            SizedBox(height: size.height*0.02,),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
             passwordTextField(size),
-            SizedBox(height: size.height*0.03,),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
 
             //sign in button
             signInButton(size),
-            SizedBox(height: size.height*0.04,),
+            SizedBox(
+              height: size.height * 0.04,
+            ),
 
             //footer section. sign up text here
             footerText(),
-
           ],
         ),
       ),
     );
   }
 
-  Widget logo(double height_, double width_){
+  Widget logo(double height_, double width_) {
     return SvgPicture.asset(
       'assets/logo.svg',
       height: height_,
@@ -98,7 +110,7 @@ class SignIn2 extends StatelessWidget {
     );
   }
 
-  Widget richText(double fontSize){
+  Widget richText(double fontSize) {
     return Text.rich(
       TextSpan(
         style: GoogleFonts.inter(
@@ -125,10 +137,10 @@ class SignIn2 extends StatelessWidget {
     );
   }
 
-  Widget emailTextField(Size size){
+  Widget emailTextField(Size size) {
     return Container(
       alignment: Alignment.center,
-      height: size.height/11,
+      height: size.height / 11,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
@@ -150,16 +162,15 @@ class SignIn2 extends StatelessWidget {
               fontSize: 12.0,
               color: const Color(0xFF969AA8),
             ),
-            border: InputBorder.none
-        ),
+            border: InputBorder.none),
       ),
     );
   }
 
-  Widget passwordTextField(Size size){
+  Widget passwordTextField(Size size) {
     return Container(
       alignment: Alignment.center,
-      height: size.height/11,
+      height: size.height / 11,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
@@ -183,41 +194,40 @@ class SignIn2 extends StatelessWidget {
               fontSize: 12.0,
               color: const Color(0xFF969AA8),
             ),
-            border: InputBorder.none
-        ),
+            border: InputBorder.none),
       ),
     );
   }
 
-  Widget signInButton(Size size){
+  Widget signInButton(Size size) {
     return Container(
-        alignment: Alignment.center,
-        height: size.height/11 ,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50.0),
-          color: const Color(0xFF21899C),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFF4C2E84).withOpacity(0.2),
-              offset: const Offset(0, 15.0),
-              blurRadius: 60.0,
-            ),
-          ],
-        ),
-        child: Text(
-          'Sign in',
-          style: GoogleFonts.inter(
-            fontSize: 16.0,
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-            height: 1.5,
+      alignment: Alignment.center,
+      height: size.height / 11,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50.0),
+        color: const Color(0xFF21899C),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF4C2E84).withOpacity(0.2),
+            offset: const Offset(0, 15.0),
+            blurRadius: 60.0,
           ),
-          textAlign: TextAlign.center,
+        ],
+      ),
+      child: Text(
+        'Sign in',
+        style: GoogleFonts.inter(
+          fontSize: 16.0,
+          color: Colors.white,
+          fontWeight: FontWeight.w600,
+          height: 1.5,
         ),
-      );
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 
-  Widget footerText(){
+  Widget footerText() {
     return Text.rich(
       TextSpan(
         style: GoogleFonts.inter(

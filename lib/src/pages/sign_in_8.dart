@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignIn8 extends StatefulWidget {
-  const SignIn8({Key? key}) : super(key: key);
+class SignInEight extends StatefulWidget {
+  const SignInEight({Key? key}) : super(key: key);
 
   @override
-  State<SignIn8> createState() => _SignIn8State();
+  State<SignInEight> createState() => _SignInEightState();
 }
 
-class _SignIn8State extends State<SignIn8> {
+class _SignInEightState extends State<SignInEight> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passController = TextEditingController();
   @override

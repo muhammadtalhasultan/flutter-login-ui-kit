@@ -2,22 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignIn5 extends StatefulWidget {
-  const SignIn5({Key? key}) : super(key: key);
+class SignInFive extends StatefulWidget {
+  const SignInFive({Key? key}) : super(key: key);
 
   @override
-  State<SignIn5> createState() => _SignIn5State();
+  State<SignInFive> createState() => _SignInFiveState();
 }
 
-class _SignIn5State extends State<SignIn5> {
-
-  TextEditingController emailController=TextEditingController();
-  TextEditingController passController=TextEditingController();
-
+class _SignInFiveState extends State<SignInFive> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final size=MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xFF21899C),
       body: SafeArea(
@@ -25,7 +23,6 @@ class _SignIn5State extends State<SignIn5> {
           height: size.height,
           child: Stack(
             children: <Widget>[
-
               //left side background design. I use a svg image here
               Positioned(
                 left: -34,
@@ -57,7 +54,8 @@ class _SignIn5State extends State<SignIn5> {
                   width: size.width,
                   height: size.height,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: size.width*0.06),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: size.width * 0.06),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -66,8 +64,10 @@ class _SignIn5State extends State<SignIn5> {
                           flex: 3,
                           child: Column(
                             children: [
-                              logo(size.height/8, size.height/8),
-                              const SizedBox(height: 16,),
+                              logo(size.height / 8, size.height / 8),
+                              const SizedBox(
+                                height: 16,
+                              ),
                               richText(23.12),
                             ],
                           ),
@@ -91,9 +91,13 @@ class _SignIn5State extends State<SignIn5> {
                           child: Column(
                             children: [
                               emailTextField(size),
-                              const SizedBox(height: 8,),
+                              const SizedBox(
+                                height: 8,
+                              ),
                               passwordTextField(size),
-                              const SizedBox(height: 16,),
+                              const SizedBox(
+                                height: 16,
+                              ),
                               buildRemember(size),
                             ],
                           ),
@@ -105,7 +109,9 @@ class _SignIn5State extends State<SignIn5> {
                           child: Column(
                             children: [
                               signInButton(size),
-                              const SizedBox(height: 16,),
+                              const SizedBox(
+                                height: 16,
+                              ),
                               buildContinueText(),
                             ],
                           ),
@@ -118,7 +124,9 @@ class _SignIn5State extends State<SignIn5> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               signInGoogleFacebookButton(size),
-                              const SizedBox(height: 16,),
+                              const SizedBox(
+                                height: 16,
+                              ),
                               buildFooter(size),
                             ],
                           ),
@@ -135,8 +143,7 @@ class _SignIn5State extends State<SignIn5> {
     );
   }
 
-
-  Widget logo(double height_, double width_){
+  Widget logo(double height_, double width_) {
     return SvgPicture.asset(
       'assets/logo2.svg',
       height: height_,
@@ -144,7 +151,7 @@ class _SignIn5State extends State<SignIn5> {
     );
   }
 
-  Widget richText(double fontSize){
+  Widget richText(double fontSize) {
     return Text.rich(
       TextSpan(
         style: GoogleFonts.inter(
@@ -171,10 +178,10 @@ class _SignIn5State extends State<SignIn5> {
     );
   }
 
-  Widget emailTextField(Size size){
+  Widget emailTextField(Size size) {
     return Container(
       alignment: Alignment.center,
-      height: size.height/12,
+      height: size.height / 12,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: const Color(0xFF4DA1B0),
@@ -185,8 +192,13 @@ class _SignIn5State extends State<SignIn5> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             //mail icon
-            const Icon(Icons.mail_rounded,color: Colors.white70,),
-            const SizedBox(width: 16,),
+            const Icon(
+              Icons.mail_rounded,
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              width: 16,
+            ),
 
             //divider svg
             SvgPicture.string(
@@ -194,7 +206,9 @@ class _SignIn5State extends State<SignIn5> {
               width: 1.0,
               height: 15.5,
             ),
-            const SizedBox(width: 16,),
+            const SizedBox(
+              width: 16,
+            ),
 
             //email address textField
             Expanded(
@@ -214,8 +228,7 @@ class _SignIn5State extends State<SignIn5> {
                       color: Colors.white70,
                       fontWeight: FontWeight.w500,
                     ),
-                    border: InputBorder.none
-                ),
+                    border: InputBorder.none),
               ),
             ),
           ],
@@ -224,10 +237,10 @@ class _SignIn5State extends State<SignIn5> {
     );
   }
 
-  Widget passwordTextField(Size size){
+  Widget passwordTextField(Size size) {
     return Container(
       alignment: Alignment.center,
-      height: size.height/12,
+      height: size.height / 12,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: const Color(0xFF4DA1B0),
@@ -238,8 +251,13 @@ class _SignIn5State extends State<SignIn5> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             //lock logo here
-            const Icon(Icons.lock,color: Colors.white70,),
-            const SizedBox(width: 16,),
+            const Icon(
+              Icons.lock,
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              width: 16,
+            ),
 
             //divider svg
             SvgPicture.string(
@@ -247,7 +265,9 @@ class _SignIn5State extends State<SignIn5> {
               width: 1.0,
               height: 15.5,
             ),
-            const SizedBox(width: 16,),
+            const SizedBox(
+              width: 16,
+            ),
 
             //password textField
             Expanded(
@@ -268,9 +288,11 @@ class _SignIn5State extends State<SignIn5> {
                       color: Colors.white70,
                       fontWeight: FontWeight.w500,
                     ),
-                    suffixIcon:   const   Icon(Icons.visibility,color: Colors.white70,),
-                    border: InputBorder.none
-                ),
+                    suffixIcon: const Icon(
+                      Icons.visibility,
+                      color: Colors.white70,
+                    ),
+                    border: InputBorder.none),
               ),
             ),
           ],
@@ -279,7 +301,7 @@ class _SignIn5State extends State<SignIn5> {
     );
   }
 
-  Widget buildRemember(Size size){
+  Widget buildRemember(Size size) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -293,10 +315,7 @@ class _SignIn5State extends State<SignIn5> {
             gradient: const LinearGradient(
               begin: Alignment(5.65, -1.0),
               end: Alignment(-1.0, 1.94),
-              colors: [
-                Color(0xFF00AD8F),
-                Color(0xFF7BF4DF)
-              ],
+              colors: [Color(0xFF00AD8F), Color(0xFF7BF4DF)],
             ),
           ),
           child: SvgPicture.string(
@@ -306,7 +325,9 @@ class _SignIn5State extends State<SignIn5> {
             height: 4.0,
           ),
         ),
-        const SizedBox(width: 16,),
+        const SizedBox(
+          width: 16,
+        ),
         Text(
           'Remember me',
           style: GoogleFonts.inter(
@@ -319,10 +340,10 @@ class _SignIn5State extends State<SignIn5> {
     );
   }
 
-  Widget signInButton(Size size){
+  Widget signInButton(Size size) {
     return Container(
       alignment: Alignment.center,
-      height: size.height/13,
+      height: size.height / 13,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: const Color(0xFFF56B3F),
@@ -338,12 +359,15 @@ class _SignIn5State extends State<SignIn5> {
     );
   }
 
-  Widget buildContinueText(){
+  Widget buildContinueText() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        const Expanded(child: Divider(color: Colors.white,)),
+        const Expanded(
+            child: Divider(
+          color: Colors.white,
+        )),
         Expanded(
           child: Text(
             'Or Continue with',
@@ -354,12 +378,15 @@ class _SignIn5State extends State<SignIn5> {
             textAlign: TextAlign.center,
           ),
         ),
-        const Expanded(child: Divider(color: Colors.white,)),
+        const Expanded(
+            child: Divider(
+          color: Colors.white,
+        )),
       ],
     );
   }
 
-  Widget signInGoogleFacebookButton(Size size){
+  Widget signInGoogleFacebookButton(Size size) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -367,8 +394,8 @@ class _SignIn5State extends State<SignIn5> {
         //sign in google button
         Container(
           alignment: Alignment.center,
-          width: size.width/2.8,
-          height: size.height/13,
+          width: size.width / 2.8,
+          height: size.height / 13,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             border: Border.all(
@@ -385,7 +412,9 @@ class _SignIn5State extends State<SignIn5> {
                 width: 22.92,
                 height: 22.92,
               ),
-              const SizedBox(width: 16,),
+              const SizedBox(
+                width: 16,
+              ),
               //google txt
               Text(
                 'Google',
@@ -398,13 +427,15 @@ class _SignIn5State extends State<SignIn5> {
             ],
           ),
         ),
-        const SizedBox(width: 16,),
+        const SizedBox(
+          width: 16,
+        ),
 
         //sign in facebook button
         Container(
           alignment: Alignment.center,
-          width: size.width/2.8,
-          height: size.height/13,
+          width: size.width / 2.8,
+          height: size.height / 13,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             border: Border.all(
@@ -421,7 +452,9 @@ class _SignIn5State extends State<SignIn5> {
                 width: 22.44,
                 height: 22.44,
               ),
-              const SizedBox(width: 16,),
+              const SizedBox(
+                width: 16,
+              ),
 
               //facebook txt
               Text(
@@ -439,7 +472,7 @@ class _SignIn5State extends State<SignIn5> {
     );
   }
 
-  Widget buildFooter(Size size){
+  Widget buildFooter(Size size) {
     return Align(
       alignment: Alignment.center,
       child: Text.rich(

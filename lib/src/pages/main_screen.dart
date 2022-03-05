@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login_ui_demo/src/pages/sign_in_1.dart';
+import 'package:login_ui_demo/src/pages/sign_in_2.dart';
+import 'package:login_ui_demo/src/pages/sign_in_3.dart';
+import 'package:login_ui_demo/src/pages/sign_in_4.dart';
+import 'package:login_ui_demo/src/pages/sign_in_5.dart';
+import 'package:login_ui_demo/src/pages/sign_in_6.dart';
+import 'package:login_ui_demo/src/pages/sign_in_7.dart';
+import 'package:login_ui_demo/src/pages/sign_in_8.dart';
+import 'package:login_ui_demo/src/pages/sign_in_9.dart';
+import 'package:login_ui_demo/src/pages/sign_in_10.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -35,7 +45,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn2(),
+                    builder: (context) => const SignInTwo(),
                   ),
                 ),
               ),
@@ -44,7 +54,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn3(),
+                    builder: (context) => const SignInThree(),
                   ),
                 ),
               ),
@@ -53,7 +63,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn4(),
+                    builder: (context) => const SignInFour(),
                   ),
                 ),
               ),
@@ -62,7 +72,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn5(),
+                    builder: (context) => const SignInFive(),
                   ),
                 ),
               ),
@@ -71,7 +81,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn6(),
+                    builder: (context) => const SignInSix(),
                   ),
                 ),
               ),
@@ -80,7 +90,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn7(),
+                    builder: (context) => const SignInSeven(),
                   ),
                 ),
               ),
@@ -89,7 +99,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn8(),
+                    builder: (context) => const SignInEight(),
                   ),
                 ),
               ),
@@ -98,7 +108,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn9(),
+                    builder: (context) => const SignInNine(),
                   ),
                 ),
               ),
@@ -107,7 +117,7 @@ class MainScreen extends StatelessWidget {
                 context,
                 () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignIn10(),
+                    builder: (context) => const SignInTen(),
                   ),
                 ),
               ),

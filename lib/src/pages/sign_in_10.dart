@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignIn10 extends StatefulWidget {
-  const SignIn10({Key? key}) : super(key: key);
+class SignInTen extends StatefulWidget {
+  const SignInTen({Key? key}) : super(key: key);
 
   @override
-  State<SignIn10> createState() => _SignIn10State();
+  State<SignInTen> createState() => _SignInTenState();
 }
 
-class _SignIn10State extends State<SignIn10> {
+class _SignInTenState extends State<SignInTen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 

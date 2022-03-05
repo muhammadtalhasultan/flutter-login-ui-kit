@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignIn4 extends StatefulWidget {
-  const SignIn4({Key? key}) : super(key: key);
+class SignInNine extends StatefulWidget {
+  const SignInNine({Key? key}) : super(key: key);
 
   @override
-  State<SignIn4> createState() => _SignIn4State();
+  State<SignInNine> createState() => _SignInNineState();
 }
 
-class _SignIn4State extends State<SignIn4> {
+class _SignInNineState extends State<SignInNine> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
@@ -18,165 +18,145 @@ class _SignIn4State extends State<SignIn4> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xFF21899C),
-      body: SafeArea(
-        child: Column(
-          children: [
-            //to give space card from top
-            const Expanded(
-              flex: 1,
-              child: Center(),
-            ),
+      backgroundColor: Colors.white,
+      body: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Container(
+          alignment: Alignment.center,
+          width: size.width,
+          height: size.height,
+          decoration: const BoxDecoration(
+              gradient: RadialGradient(colors: [
+            Color.fromRGBO(33, 137, 156, 0.15),
+            Colors.white,
+          ], center: Alignment.topRight, radius: 0.8)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                //welcome text, logo and loginPage text here
+                Expanded(
+                  flex: 5,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      welcomeText(),
+                      SizedBox(
+                        height: size.height * 0.03,
+                      ),
+                      logo(size.height / 8, size.height / 8),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      richText(20.42),
+                    ],
+                  ),
+                ),
 
-            //page content
-            Expanded(
-              flex: 11,
-              child: buildCard(size),
+                //email, password textField and recovery password here
+                Expanded(
+                  flex: 4,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      emailTextField(size),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      passwordTextField(size),
+                      SizedBox(
+                        height: size.height * 0.01,
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          'Recovery Password?',
+                          style: GoogleFonts.inter(
+                            fontSize: 11.0,
+                            color: const Color(0xFF6A6F7D),
+                          ),
+                          textAlign: TextAlign.right,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                //sign in button here
+                Expanded(flex: 1, child: signInButton(size)),
+
+                //footer content
+                //don't have account text,social logo and sign up text here
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      buildNoAccountText(),
+                      SizedBox(
+                        height: size.height * 0.03,
+                      ),
+
+                      //here social logo and sign up text
+                      buildFooter(size),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
   }
 
-  Widget buildCard(Size size) {
-    return Container(
-      alignment: Alignment.center,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(40), topRight: Radius.circular(40)),
-        color: Colors.white,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            //build minimize icon
-            Align(
-              alignment: Alignment.center,
-              child: Container(
-                width: 35,
-                height: 4.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.grey,
-                ),
-              ),
+  Widget welcomeText() {
+    return Center(
+      child: Text.rich(
+        TextSpan(
+          style: GoogleFonts.inter(
+            fontSize: 22.0,
+            color: Colors.black,
+            height: 1.59,
+          ),
+          children: const [
+            TextSpan(
+              text: 'Welcome Back',
             ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-
-            //welcome text
-            Text(
-              'Welcome Back!',
-              style: GoogleFonts.inter(
-                fontSize: 22.0,
-                color: Colors.black,
+            TextSpan(
+              text: ', ',
+              style: TextStyle(
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(
-              height: size.height * 0.01,
-            ),
-            Text(
-              'Let’s login for explore continues',
-              style: GoogleFonts.inter(
-                fontSize: 14.0,
-                color: const Color(0xFF969AA8),
+            TextSpan(
+              text: 'Login',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                decoration: TextDecoration.underline,
               ),
             ),
-            SizedBox(
-              height: size.height * 0.03,
-            ),
-
-            //logo section
-            logo(size.height / 12, size.height / 12),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            richText(24),
-            SizedBox(
-              height: size.height * 0.03,
-            ),
-
-            //email textField
-            Text(
-              'Email or Phone Number',
-              style: GoogleFonts.inter(
-                fontSize: 14.0,
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
+            TextSpan(
+              text: ' ',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(
-              height: size.height * 0.01,
+            TextSpan(
+              text: 'for Continue !',
             ),
-            emailTextField(size),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-
-            //password textField
-            Text(
-              'Password',
-              style: GoogleFonts.inter(
-                fontSize: 14.0,
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            SizedBox(
-              height: size.height * 0.01,
-            ),
-            passwordTextField(size),
-            SizedBox(
-              height: size.height * 0.03,
-            ),
-
-            //sign in button
-            signInButton(size),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-
-            //we can connect text
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Expanded(child: Divider()),
-                const SizedBox(
-                  width: 16,
-                ),
-                Text(
-                  'We can Connect with',
-                  style: GoogleFonts.inter(
-                    fontSize: 12.0,
-                    color: const Color(0xFF969AA8),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                const Expanded(child: Divider()),
-              ],
-            ),
-
-            //footer section
-            buildFooter(size),
           ],
         ),
+        textAlign: TextAlign.center,
       ),
     );
   }
 
   Widget logo(double height_, double width_) {
     return SvgPicture.asset(
-      'assets/logo.svg',
+      'assets/logo2.svg',
       height: height_,
       width: width_,
     );
@@ -215,58 +195,34 @@ class _SignIn4State extends State<SignIn4> {
       child: TextField(
         controller: emailController,
         style: GoogleFonts.inter(
-          fontSize: 18.0,
+          fontSize: 16.0,
           color: const Color(0xFF151624),
         ),
         maxLines: 1,
         keyboardType: TextInputType.emailAddress,
-        cursorColor: const Color(0xFF151624),
+        cursorColor: const Color(0xFF21899C),
         decoration: InputDecoration(
-          hintText: 'Enter your email',
-          hintStyle: GoogleFonts.inter(
-            fontSize: 16.0,
-            color: const Color(0xFF151624).withOpacity(0.5),
-          ),
-          filled: true,
-          fillColor: emailController.text.isEmpty
-              ? const Color.fromRGBO(248, 247, 251, 1)
-              : Colors.transparent,
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(
-                color: emailController.text.isEmpty
-                    ? Colors.transparent
-                    : const Color.fromRGBO(44, 185, 176, 1),
-              )),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(
-                color: Color.fromRGBO(44, 185, 176, 1),
-              )),
-          prefixIcon: Icon(
-            Icons.mail_outline_rounded,
-            color: emailController.text.isEmpty
-                ? const Color(0xFF151624).withOpacity(0.5)
-                : const Color.fromRGBO(44, 185, 176, 1),
-            size: 16,
-          ),
-          suffix: Container(
-            alignment: Alignment.center,
-            width: 24.0,
-            height: 24.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100.0),
-              color: const Color.fromRGBO(44, 185, 176, 1),
+            hintText: 'Enter your email',
+            hintStyle: GoogleFonts.inter(
+              fontSize: 16.0,
+              color: const Color(0xFFABB3BB),
+              height: 1.0,
             ),
-            child: emailController.text.isEmpty
-                ? const Center()
-                : const Icon(
-                    Icons.check,
-                    color: Colors.white,
-                    size: 13,
-                  ),
-          ),
-        ),
+            filled: true,
+            fillColor: const Color.fromRGBO(248, 247, 251, 1),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(
+                    color: emailController.text.isEmpty
+                        ? Colors.transparent
+                        : const Color(0xFF21899C))),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(
+                    color: emailController.text.isEmpty
+                        ? Colors.transparent
+                        : const Color(0xFF21899C))),
+            border: InputBorder.none),
       ),
     );
   }
@@ -296,14 +252,14 @@ class _SignIn4State extends State<SignIn4> {
                   fontSize: 16.0,
                   color: const Color(0xFF151624),
                 ),
-                cursorColor: const Color(0xFF151624),
+                cursorColor: const Color(0xFF21899C),
                 obscureText: true,
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                   hintText: 'Enter your password',
                   hintStyle: GoogleFonts.inter(
                     fontSize: 16.0,
-                    color: const Color(0xFF151624).withOpacity(0.5),
+                    color: const Color(0xFFABB3BB),
                   ),
                   border: InputBorder.none,
                 ),
@@ -338,12 +294,11 @@ class _SignIn4State extends State<SignIn4> {
   }
 
   Widget signInButton(Size size) {
-    return // Group: Button
-        Container(
+    return Container(
       alignment: Alignment.center,
       height: size.height / 13,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.0),
+        borderRadius: BorderRadius.circular(15.0),
         color: const Color(0xFF21899C),
         boxShadow: [
           BoxShadow(
@@ -366,14 +321,43 @@ class _SignIn4State extends State<SignIn4> {
     );
   }
 
+  Widget buildNoAccountText() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        const Expanded(
+            flex: 2,
+            child: Divider(
+              color: Color(0xFF969AA8),
+            )),
+        Expanded(
+          flex: 3,
+          child: Text(
+            'Don’t Have Account?',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.inter(
+              fontSize: 12.0,
+              color: const Color(0xFF969AA8),
+              fontWeight: FontWeight.w500,
+              height: 1.67,
+            ),
+          ),
+        ),
+        const Expanded(
+            flex: 2,
+            child: Divider(
+              color: Color(0xFF969AA8),
+            )),
+      ],
+    );
+  }
+
   Widget buildFooter(Size size) {
     return Center(
       child: Column(
         children: <Widget>[
-          //social logo: facebook, google & apple here
-          SizedBox(
-            height: size.height * 0.01,
-          ),
+          //social icon here
           SizedBox(
             width: size.width * 0.6,
             height: 44.0,
@@ -415,7 +399,7 @@ class _SignIn4State extends State<SignIn4> {
 
                 //apple logo here
                 Container(
-                  alignment: Alignment.center,
+                  alignment: const Alignment(0.02, 0.04),
                   width: 44.0,
                   height: 44.0,
                   decoration: BoxDecoration(
@@ -431,11 +415,11 @@ class _SignIn4State extends State<SignIn4> {
               ],
             ),
           ),
-
-          //footer text 'sign up' text here
           SizedBox(
-            height: size.height * 0.01,
+            height: size.height * 0.03,
           ),
+
+          //footer text here
           Text.rich(
             TextSpan(
               style: GoogleFonts.inter(

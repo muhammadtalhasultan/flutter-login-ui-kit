@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignIn7 extends StatefulWidget {
-  const SignIn7({Key? key}) : super(key: key);
+class SignInSeven extends StatefulWidget {
+  const SignInSeven({Key? key}) : super(key: key);
 
   @override
-  State<SignIn7> createState() => _SignIn7State();
+  State<SignInSeven> createState() => _SignInSevenState();
 }
 
-class _SignIn7State extends State<SignIn7> {
+class _SignInSevenState extends State<SignInSeven> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
@@ -419,7 +419,7 @@ class _SignIn7State extends State<SignIn7> {
         boxShadow: [
           BoxShadow(
             color: const Color(0xFF4C2E84).withOpacity(0.2),
-            offset:    const  Offset(0, 15.0),
+            offset: const Offset(0, 15.0),
             blurRadius: 60.0,
           ),
         ],
