@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:login_ui_demo/ui/sign%20in%2010/sign%20in%2010.dart';
-import 'package:login_ui_demo/ui/sign%20in%202/sign%20in%202.dart';
-import 'package:login_ui_demo/ui/sign%20in%203/sign%20in%203.dart';
-import 'package:login_ui_demo/ui/sign%20in%204/sign%20in%204.dart';
-import 'package:login_ui_demo/ui/sign%20in%205/sign%20in%205.dart';
-import 'package:login_ui_demo/ui/sign%20in%206/sign%20in%206.dart';
-import 'package:login_ui_demo/ui/sign%20in%207/sign%20in%207.dart';
-import 'package:login_ui_demo/ui/sign%20in%208/sign%20in%208.dart';
-import 'package:login_ui_demo/ui/sign%20in%209/sign%20in%209.dart';
-import 'package:login_ui_demo/ui/sign_in_one/sign_in_page.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);

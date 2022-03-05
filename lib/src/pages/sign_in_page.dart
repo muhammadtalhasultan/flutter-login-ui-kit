@@ -239,67 +239,6 @@ class SignInOne extends StatelessWidget {
     );
   }
 
-  // Widget signInGoogleButton(Size size) {
-  //   return Container(
-  //     height: size.height / 12,
-  //     alignment: Alignment.center,
-  //     decoration: BoxDecoration(
-  //       borderRadius: BorderRadius.circular(40.0),
-  //       border: Border.all(
-  //         width: 1.0,
-  //         color: const Color(0xFF134140),
-  //       ),
-  //     ),
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //       children: [
-  //         //google logo here
-  //         Expanded(flex: 1, child: SvgPicture.asset('assets/google_logo.svg')),
-  //         //sign in with google text here
-  //         Expanded(
-  //           flex: 2,
-  //           child: Text(
-  //             'Sign in with Google',
-  //             style: GoogleFonts.inter(
-  //               fontSize: 16.0,
-  //               color: const Color(0xFF134140),
-  //             ),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  // Widget signInAppleButton(Size size) {
-  //   return Container(
-  //     alignment: Alignment.center,
-  //     height: size.height / 12,
-  //     decoration: BoxDecoration(
-  //       borderRadius: BorderRadius.circular(40.0),
-  //       color: Colors.black,
-  //     ),
-  //     child: Row(
-  //       children: <Widget>[
-  //         //apple logo here
-  //         Expanded(flex: 1, child: SvgPicture.asset('assets/apple_logo.svg')),
-  //         //sign in with apple text here
-  //         Expanded(
-  //           flex: 2,
-  //           child: Text(
-  //             'Sign in with Apple',
-  //             style: GoogleFonts.inter(
-  //               fontSize: 16.0,
-  //               color: Colors.white,
-  //               height: 1.88,
-  //             ),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
   //sign up text here
   Widget footerText() {
     return Text.rich(
