@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:login_ui_demo/ui/sign_in_one/social_button.dart';
+import 'package:login_ui_demo/ui/sign_in_1/social_button.dart';
 
 class SignInOne extends StatelessWidget {
   const SignInOne({Key? key}) : super(key: key);
